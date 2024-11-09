@@ -13,7 +13,13 @@ var timer = setInterval(main, fps)
 
 /*------------Declare Variables Here--------*/
 
-
+var avatar = new GameObject();
+avatar.color = `#ff0099`;
+avatar.vx = 1;
+avatar.vy = 1;
+avatar.w = 40;
+avatar.h = 40;
+var avatarSpeed = 10;
 
 
 /*--------------main()------------------------
@@ -26,10 +32,15 @@ function main()
     ctx.clearRect(0,0,c.width,c.height); 
 
     //Any changes to numbers
-
+        if(d==true){ avatar.x += avatar.vx; }
+        if(a==true){ avatar.x += -avatar.vx;}
+        if(w==true){ avatar.y += -avatar.vy;}
+        if(s==true){ avatar.y += avatar.vy; }
     //Any collision detection 
 
     //draw the pictures
+    avatar.move();
+    avatar.render();
 }
 
 //random number generator
