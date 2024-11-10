@@ -4,7 +4,7 @@ class GameObject
     {
     /*Object properties (or attributes)*/
     //object position
-     this.x=c.width/2;
+     this.x=c.width/14;
      this.y=c.height/2;
      //object angle
      this.angle = 0;
@@ -24,10 +24,36 @@ class GameObject
     render()
     {
         ctx.save();
-            ctx.fillStyle = this.color
-            ctx.translate(this.x, this.y)
-            ctx.rotate(this.angle*Math.PI/180)
-            ctx.fillRect(-this.w/2, -this.h/2, this.w, this.h)
+        ctx.fillStyle = this.color
+        ctx.translate(this.x, this.y)
+        ctx.rotate(this.angle*Math.PI/180)
+        ctx.fillRect(-this.w/2, -this.h/2, this.w, this.h)
+        ctx.restore();
+    }
+
+    renderMaze1()
+    {
+        ctx.save();
+        ctx.strokeStyle = "red";
+        ctx.beginPath();
+        ctx.lineTo(this.w*2,this.h-20);
+        ctx.lineTo(this.w+245,this.h+156);
+        ctx.lineTo(this.w+412,this.h)
+        ctx.lineWidth = "10";
+        ctx.stroke();
+        ctx.restore();
+    }
+
+    renderMaze2()
+    {
+        ctx.save();
+        ctx.strokeStyle = "purple";
+        ctx.beginPath();
+        ctx.lineTo(this.w*2,this.h+80);
+        ctx.lineTo(this.w+245,this.h+256);
+        ctx.lineTo(this.w+412,this.h+100)
+        ctx.lineWidth = "10";
+        ctx.stroke();
         ctx.restore();
     }
 
