@@ -15,10 +15,23 @@ avatar.vx = 0;
 avatar.vy = 0;
 avatar.w = 20;
 avatar.h = 20;
+avatar.x = 10;
+avatar.y = 10;
 var avatarSpeed = 1;
 
 
 var mazeWall = new GameObject();
+mazeWall.w = 30;
+mazeWall.angle = 0;
+
+var mazeWall2 = new GameObject();
+mazeWall2.x = 150;
+mazeWall2.w = 30;
+mazeWall2.angle = 0;
+
+var maze = [];
+maze[0] = mazeWall;
+maze[1] = mazeWall2;
 
 /*--------------main()------------------------
 This is the function that makes the game work
@@ -79,16 +92,26 @@ function game()
     if(avatar.y < 0 + avatar.h/2){avatar.y = 0 + avatar.h/2;}
     if(avatar.y > c.height + -avatar.h/2){avatar.y = c.height + -avatar.h/2;}
 
+    
+
+    //draw the pictures
+    for(var m = 0; m< maze.length;m++){
+        maze[m].render();
+        if(avatar.overlaps(maze[m])){
+            currentScene = gameScenes[2];
+        }
+    }
+    // mazeWall.render();
+    // mazeWall2.render();
+    //mazeWall.renderMaze2();
+
+    
+    avatar.move();
     // if(avatar.overlaps(mazeWall)){
     //     currentScene = gameScenes[2];
     // }
-
-    //draw the pictures
-
-    mazeWall.renderMaze1();
-    mazeWall.renderMaze2();
-    avatar.move();
     avatar.render();
+
 
 }
 
