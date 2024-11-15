@@ -15,8 +15,8 @@ avatar.vx = 0;
 avatar.vy = 0;
 avatar.w = 20;
 avatar.h = 20;
-avatar.x = 10;
-avatar.y = 10;
+avatar.x = 15;
+avatar.y = 250;
 var avatarSpeed = 1;
 
 
