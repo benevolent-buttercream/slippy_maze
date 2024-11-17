@@ -16,6 +16,7 @@ canvas{
         NOTE: This path uses ../ to navigate up one level into the root folder where the "images" folder is located.
     */
     /*background-image: url(../images/mrt.jpg);*/
+    background-image: url(../images/Slippy_Maze_Outline.jpg);
 }
 #instructions{
     width:300px;

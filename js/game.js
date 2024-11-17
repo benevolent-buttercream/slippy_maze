@@ -4,7 +4,7 @@ var ctx = c.getContext(`2d`)
 var fps = 1000/60
 var timer = setInterval(main, fps)
 
-var gameScenes = ["start", "game", "gameOver"];
+var gameScenes = ["start", "game", "gameOver", "gameWin"];
 var currentScene = gameScenes[0];
 
 /*------------Declare Variables Here--------*/
@@ -18,7 +18,6 @@ avatar.h = 20;
 avatar.x = 15;
 avatar.y = 250;
 var avatarSpeed = 1;
-
 
 var mazeWall = new GameObject();
 mazeWall.w = 30;
@@ -64,7 +63,12 @@ function main()
             ctx.font = "60px Arial";
             ctx.fillText(`you're loss`, c.width/2 -150, c.height/2);
             break;
-            
+
+        case "gameWin":
+            console.log(currentScene);
+            ctx.font = "60px Arial";
+            ctx.fillText(`you're win`, c.width/2 -150, c.height/2);
+            break;    
     }
 
 }
