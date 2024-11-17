@@ -9,6 +9,7 @@ var up = false;
 var left = false;
 var down = false;
 var right = false;
+var enter = false;
 
 /*---Key Press Code-----------*/
 
@@ -24,7 +25,9 @@ function press(e)
     if(e.keyCode == 40){down = true;}
     if(e.keyCode == 37){left = true;}
     if(e.keyCode == 39){right = true;}
+    if(e.keyCode == 13){enter = true;}
 }
+
 
 /*---Key Release Code-----------*/
 document.addEventListener(`keyup`, release);
@@ -38,4 +41,5 @@ function release(e)
     if(e.keyCode == 40){down = false;}
     if(e.keyCode == 37){left = false;}
     if(e.keyCode == 39){right = false;}
+    if(e.keyCode == 13){enter = false;}
 }

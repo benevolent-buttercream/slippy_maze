@@ -4,8 +4,8 @@ class GameObject
     {
     /*Object properties (or attributes)*/
     //object position
-     this.x=c.width/14;
-     this.y=c.height/2;
+     this.x=0;
+     this.y=0;
      //object angle
      this.angle = 0;
      //object dimensions
@@ -15,45 +15,35 @@ class GameObject
      this.vx=0;
      this.vy=0;
     //object color
-     this.color = `hotpink`  
-
-     
+     this.color = `hotpink`
     }
 
     //Draws a rectangle 
-    render()
+    renderSlippy(image)
     {
         ctx.save();
         ctx.fillStyle = this.color
         ctx.translate(this.x, this.y)
         ctx.rotate(this.angle*Math.PI/180)
-        ctx.fillRect(-this.w/2, -this.h/2, this.w, this.h)
+        ctx.drawImage(image,-this.w/2, -this.h/2, this.w, this.h)
         ctx.restore();
     }
 
-    renderMaze1()
+    renderMaze(image)
     {
         ctx.save();
-        ctx.strokeStyle = "red";
-        ctx.beginPath();
-        ctx.lineTo(this.w*2,this.h-20);
-        ctx.lineTo(this.w+245,this.h+156);
-        ctx.lineTo(this.w+412,this.h)
-        ctx.lineWidth = "10";
-        ctx.stroke();
+        ctx.fillStyle = this.color
+        ctx.translate(this.x, this.y)
+        ctx.drawImage(image,-this.w/2, -this.h/2, this.w, this.h)
         ctx.restore();
     }
 
-    renderMaze2()
+    renderMouse(image)
     {
         ctx.save();
-        ctx.strokeStyle = "purple";
-        ctx.beginPath();
-        ctx.lineTo(this.w*2,this.h+80);
-        ctx.lineTo(this.w+245,this.h+256);
-        ctx.lineTo(this.w+412,this.h+100)
-        ctx.lineWidth = "10";
-        ctx.stroke();
+        ctx.fillStyle = this.color
+        ctx.translate(this.x, this.y)
+        ctx.drawImage(image,-this.w/2, -this.h/2, this.w, this.h)
         ctx.restore();
     }
 
@@ -95,7 +85,6 @@ class GameObject
             this.right().x > _obj.left().x
         )
         {
-            
             return true
         }
         return false;
