@@ -171,7 +171,7 @@ function main()
             ctx.fillStyle = "white";
             ctx.font = "60px Arial";
             ctx.fillText(`you're winer`, c.width/2 -150, c.height/2);
-            ctx.fillText(`Refresh to Restart`, c.width/2 -10, c.height/1.5);
+            ctx.fillText(`Refresh to Restart`, c.width/2 -255, c.height/1.5);
             break;    
     }
 
